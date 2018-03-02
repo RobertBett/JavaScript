@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+        
+        <title>Whats the weather?</title>
+    </head>
+<body>
+  <main>
+  <div class="bg-video">
+          <video  class="bg-video__content" autoplay muted loop>
+              <source src="/assets/Palm_Trees.mp4" type="video/mp4">
+              <source src="/assets/Palm_Trees.webm" type="video/webm">
+              Your Browser is not supported
+          </video>
+      </div>
+      <img src="/assets/logo.png" alt="" class="logo">
+      <section class="section-book">
+          <div class="row">
+              <div class="book">
+                  <div class="book__form">
+                      <form (submit)="saveForm()" class="form">
+                          <div class="u-margin-bottom-medium">
+                                  <h2 class="heading-secondary">Search Location</h2>
+                          </div>
+                          <div class="form__group">
+                              <input type="text" class="form__input" placeholder="City" name="city" [(ngModel)]="city" required minlength="3" title="Cannot be blank">
+                              <label class="form__label">City</label>
+                          </div>
+                          <div class="form__group">
+                            <input type="text" class="form__input" placeholder="Country Code" name="code" [(ngModel)]="code" required minlength="2" maxlength="2" title="Cannot be blank">
+                            <label class="form__label">Country Code</label>
+                          </div>
+                          <div class="form__group">
+                              <input class="green__button green__button--green2" type="submit" value="Search">
+                              <a href="/home" class="btn-text">Go Back &rarr;</a>
+                          </div>
+                      </form>
+                  </div>
+
+              </div>
+          </div>
+      </section>
+
+  </main>
+</body>
+</html>

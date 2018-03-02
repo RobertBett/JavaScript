@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+        
+        <title>Whats the weather?</title>
+    </head>
+<body>
+      <header class="header">
+      <div class="header__logo-box">
+          <img src="assets/logo.png" alt="logo" class="header__logo">
+      </div>
+          <div class="header__text-box">
+              <h1 class="heading-primary">
+              <span class="heading-primary--main">Nete weather</span>
+              </h1>
+              <a href="/search" class="btn btn--white btn--animated">Change location</a>
+          </div>
+      </header>
+      <section class="section-tours">
+      <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary">
+            <span class="tempheading">{{temp}}&#x2109;</span> &nbsp; in {{weather.city.name}},  {{weather.city.country}}
+          </h2>
+      </div>
+      <div class="row">
+          <div class="col-1-of-3">
+              <div class="card">
+                  <div class="card__side card__side--front">
+                      <div class="card__picture card__picture--1">
+                          &nbsp;
+                      </div>
+                  <div class="card__box">
+                      <h4 class="card__heading">
+                          <span class="card__heading-span card__heading-span--1">
+                              todays weather
+                          </span>
+                      </h4>
+                      <div class="card__details">
+                          <ul>
+                              <li>{{weather.list[0].weather[0].description}}</li>
+                              <li>Today's High :{{tempmax}} &#x2109;</li>
+                              <li>Today's Low: {{tempmin}} &#x2109;</li>
+                              <li>humidity :{{weather.list[0].main.humidity}}%</li>
+                              <li>Hover for more info</li>
+                          </ul>
+                      </div>
+                  </div>
+                  </div>
+                  <div class="card__side card__side--back card__side--back-1">
+                      <div class="card__cta">
+                          <div class="card__price-box">
+                              <p class="card__price-only">Current Temprature</p>
+                              <p class="card__price-value">{{temp}} &#x2109;</p>
+                              <p class="card__price-value2">Wind  {{weather.list[0].wind.speed}}mph</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-1-of-3">
+              <div class="card">
+                  <div class="card__side card__side--front">
+                          <div class="card__picture card__picture--2">
+                                  &nbsp;
+                              </div>
+                            <div class="card__box">
+                              <h4 class="card__heading">
+                                  <span class="card__heading-span card__heading-span--2">
+                                        tomorrows weather
+                                  </span>
+                              </h4>
+                              <div class="card__details">
+                                  <ul>
+                                      <li>{{weather.list[9].weather[0].description}}</li>
+                                      <li>Tomorrow's High :{{tempmax1}} &#x2109;</li>
+                                      <li>Tomorrow's Low: {{tempmin1}} &#x2109;</li>
+                                      <li>humidity :{{weather.list[9].main.humidity}}%</li>
+                                      <li>Hover for more info</li>
+                                  </ul>
+                              </div>
+                            </div>
+                  </div>
+                  <div class="card__side card__side--back card__side--back-2">
+                      <div class="card__cta">
+                              <div class="card__price-box">
+                                  <p class="card__price-only">tomorrow's high</p>
+                                  <p class="card__price-value">{{tempmax1}} &#x2109;</p>
+                                  <p class="card__price-value2">Wind  {{weather.list[9].wind.speed}}mph</p>
+                              </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-1-of-3">
+              <div class="card">
+                  <div class="card__side card__side--front">
+                      <div class="card__picture card__picture--3">
+                              &nbsp;
+                          </div>
+                          <div class="card__box">
+                          <h4 class="card__heading">
+                              <span class="card__heading-span card__heading-span--3">
+                                  the day after 
+                              </span>
+                          </h4>
+                          <div class="card__details">
+                              <ul>
+                                  <li>{{weather.list[13].weather[0].description}}</li>
+                                  <li> High :{{tempmax2}} &#x2109;</li>
+                                  <li> Low: {{tempmin2}} &#x2109;</li>
+                                  <li>humidity :{{weather.list[13].main.humidity}}%</li>
+                                  <li>Hover for more info</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card__side card__side--back card__side--back-3">
+                      <div class="card__cta">
+                              <div class="card__price-box">
+                                  <p class="card__price-only">High</p>
+                                  <p class="card__price-value">{{tempmax2}} &#x2109;</p>
+                                  <p class="card__price-value2">Wind  {{weather.list[13].wind.speed}}mph</p>
+                              </div>
+                      </div>
+                    </div>
+              </div>
+          </div>
+          </div>
+      </section>
+    <!-- SECTION2 -->
+      <section class="section-tours2">
+          <div class="row">
+              <div class="col-1-of-3">
+                  <div class="card">
+                      <div class="card__side card__side--front">
+                          <div class="card__picture card__picture--1">
+                              &nbsp;
+                          </div>
+                      <div class="card__box">
+                          <h4 class="card__heading">
+                              <span class="card__heading-span card__heading-span--1">
+                                  and the day after that
+                              </span>
+                          </h4>
+                          <div class="card__details">
+                              <ul>
+                                  <li>{{weather.list[20].weather[0].description}}</li>
+                                  <li> High :{{tempmax3}} &#x2109;</li>
+                                  <li> Low: {{tempmin3}} &#x2109;</li>
+                                  <li>humidity :{{weather.list[20].main.humidity}}%</li>
+                                  <li>Hover for more info</li>
+                              </ul>
+                          </div>
+                      </div>
+                      </div>
+                      <div class="card__side card__side--back card__side--back-1">
+                          <div class="card__cta">
+                              <div class="card__price-box">
+                                  <p class="card__price-only">High</p>
+                                  <p class="card__price-value">{{tempmax3}} &#x2109;</p>
+                                  <p class="card__price-value2">Wind  {{weather.list[20].wind.speed}}mph</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-1-of-3">
+                  <div class="card">
+                      <div class="card__side card__side--front">
+                              <div class="card__picture card__picture--2">
+                                      &nbsp;
+                                  </div>
+                                <div class="card__box">
+                                  <h4 class="card__heading">
+                                      <span class="card__heading-span card__heading-span--2">
+                                          and the day after that
+                                      </span>
+                                  </h4>
+                                  <div class="card__details">
+                                      <ul>
+                                          <li>{{weather.list[28].weather[0].description}}</li>
+                                          <li> High :{{tempmax4}} &#x2109;</li>
+                                          <li> Low: {{tempmin4}} &#x2109;</li>
+                                          <li>humidity :{{weather.list[28].main.humidity}}%</li>
+                                          <li>Hover for more info</li>
+                                      </ul>
+                                  </div>
+                                </div>
+                      </div>
+                      <div class="card__side card__side--back card__side--back-2">
+                          <div class="card__cta">
+                                  <div class="card__price-box">
+                                      <p class="card__price-only">High</p>
+                                      <p class="card__price-value">{{tempmax4}} &#x2109;</p>
+                                      <p class="card__price-value2">Wind  {{weather.list[28].wind.speed}}mph</p>
+                                  </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-1-of-3">
+                  <div class="card">
+                      <div class="card__side card__side--front">
+                          <div class="card__picture card__picture--3">
+                                  &nbsp;
+                              </div>
+                              <div class="card__box">
+                              <h4 class="card__heading">
+                                  <span class="card__heading-span card__heading-span--3">
+                                      and the day after that
+                                  </span>
+                              </h4>
+                              <div class="card__details">
+                                  <ul>
+                                      <li>{{weather.list[36].weather[0].description}}</li>
+                                      <li> High :{{tempmax5}} &#x2109;</li>
+                                      <li> Low: {{tempmin5}} &#x2109;</li>
+                                      <li>humidity :{{weather.list[36].main.humidity}}%</li>
+                                      <li>Hover for more info</li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card__side card__side--back card__side--back-3">
+                          <div class="card__cta">
+                                  <div class="card__price-box">
+                                      <p class="card__price-only">High</p>
+                                      <p class="card__price-value">{{tempmax5}} &#x2109;</p>
+                                      <p class="card__price-value2">Wind  {{weather.list[36].wind.speed}}mph</p>
+                                  </div>
+                          </div>
+                        </div>
+                  </div>
+              </div>
+              </div>
+          </section>
+</body>
+</html>

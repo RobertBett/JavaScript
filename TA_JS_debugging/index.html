@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="style.css" />
+<script src="angular.js"></script>
+<script src="app.js"></script>
+</head>
+
+<div ng-app="app" ng-controller="MainController">
+    <ul style=list-style-type:{{bullets}}>
+        <h3>Continents</h3>
+        <li ng-repeat="(contient,countries) in list" ng-click="selected = $index" ng-class="{active: selected === $index}">
+            {{contient}}
+            <country data="countries"></country>
+        </li>
+    </ul>
+</div>
+
+</html>
+
