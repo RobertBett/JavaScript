@@ -7,9 +7,9 @@
 </head>
 
 <div ng-app="app" ng-controller="MainController">
-    <ul style=list-style-type:{{bullets}}>
+    <ul.a{list-style-type:bullets}>
         <h3>Continents</h3>
-        <li ng-repeat="(contient,countries) in list" ng-click="selected = $index" ng-class="{active: selected === $index}">
+        <li ng-repeat="(contient,countries) in list" ng-click=selected = $index ng-class="{active: selected === $index}">
             {{contient}}
             <country data="countries"></country>
         </li>
