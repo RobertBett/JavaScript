@@ -1,0 +1,17 @@
+<header> <button class="switch">Green</button> <button class="switch">Red</button></header>
+<!-- <input type="text" (ngModelChange)="onChange($event)" [(ngModel)]="columns" > -->
+<input type="text" [(ngModel)]="columns" >
+<button (click)="onChange()">Change</button>
+ <div id="ul1">
+
+ </div>
+
+
+<div *ngIf="columns">
+    <ul *ngFor="let column of arr" >
+        <li>{{column}}</li>
+    </ul>
+</div>
+
+<p>{{arr}}</p>
+<p>{{columns}}</p>
