@@ -1,17 +1,214 @@
-<header> <button class="switch">Green</button> <button class="switch">Red</button></header>
-<!-- <input type="text" (ngModelChange)="onChange($event)" [(ngModel)]="columns" > -->
-<input type="text" [(ngModel)]="columns" >
-<button (click)="onChange()">Change</button>
- <div id="ul1">
 
- </div>
+<body>
+        <header class="header"> 
+                <div class="logo">
+                    <div *ngIf="isColor; else redimg">
+                        <img  src="assets/My-app-green-@2x.png" alt="green" class="app_logo">
+                     </div>
+                    <ng-template #redimg >
+                        <img src="assets/My-app-red-@2x.png" alt="red" class="app_logo">
+                    </ng-template>
+                </div>
 
-
-<div *ngIf="columns">
-    <ul *ngFor="let column of arr" >
-        <li>{{column}}</li>
-    </ul>
-</div>
-
-<p>{{arr}}</p>
-<p>{{columns}}</p>
+                <div class="image">
+                    <img src="assets/face.jpg" alt="face" class="image_circle">
+                </div>
+                <button class="switch button" [ngClass]="{'green': isColor, 'red2': !isColor}"  (click)="changeGreen()">Green</button>
+                <button class="switch button" [ngClass]="{'button': isColor, 'red': !isColor}" (click)="changeRed()">Red</button>
+            </header>
+            
+        
+        
+                <div class="columnContain">
+                    <div class="inputs">
+                        <label for="">Number of Columns</label>
+                        <input type="text"  [(ngModel)]="columns" >
+                        <input type="text" placeholder="px"  [(ngModel)]="pixels"  >
+                        <!-- <input type="text" [(ngModel)]="columns" id="data" (change)="onChange()"> -->
+                        <button class="button change" [ngClass]="{'button': isColor, 'red2': !isColor}" (click)="onChange()">Change</button>
+                    </div>
+        
+                        <div class="col" id="ul1">
+                            
+                        </div>
+        
+                </div>
+        
+        
+        
+                <div class="sidebar">
+                        <div class="svgFire">
+                            <div *ngIf="isColor; else redfire">
+                                    <svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                                        <title>Group 2</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <defs></defs>
+                                        <g id="Test-project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="Green" transform="translate(-11.000000, -83.000000)">
+                                                <g id="Group-2" transform="translate(11.000000, 83.000000)">
+                                                    <circle id="Oval-2" fill="#FFFFFF" cx="26" cy="26" r="26"></circle>
+                                                    <g id="Fire-Element" transform="translate(11.000000, 6.000000)" fill-rule="nonzero">
+                                                        <g id="Group">
+                                                            <path d="M30,23 C30,31.395 23.394,38 14.999,38 C6.604,38 0,31.395 0,23 C0,14.605 13.479,7.6 11.959,0 C15,0 30,10.841 30,23 Z" id="Shape" fill="#4CAF50"></path>
+                                                            <path d="M24,27 C24,19.401 15,12 15,12 C15,18.08 6,20.921 6,27 C6,32.036 9.963,36 15,36 C20.037,36 24,32.036 24,27 Z" id="Shape" fill="#FF5722"></path>
+                                                            <path d="M9.999,30.406 C10,27 15,25.051 15,22 C15,22 19.999,25.832 19.999,30.406 C19.999,32.931 17.762,34.98 14.999,34.98 C12.236,34.98 9.998,32.932 9.999,30.406 Z" id="Shape" fill="#FFC107"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                            </div>
+        
+                            <ng-template #redfire>
+                                    <svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                                        <title>Group 2</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <defs></defs>
+                                        <g id="Test-project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="Green" transform="translate(-11.000000, -83.000000)">
+                                                <g id="Group-2" transform="translate(11.000000, 83.000000)">
+                                                    <circle id="Oval-2" fill="#FFFFFF" cx="26" cy="26" r="26"></circle>
+                                                    <g id="Fire-Element" transform="translate(11.000000, 6.000000)" fill-rule="nonzero">
+                                                        <g id="Group">
+                                                            <path d="M30,23 C30,31.395 23.394,38 14.999,38 C6.604,38 0,31.395 0,23 C0,14.605 13.479,7.6 11.959,0 C15,0 30,10.841 30,23 Z" id="Shape" fill="#DE2D00"></path>
+                                                            <path d="M24,27 C24,19.401 15,12 15,12 C15,18.08 6,20.921 6,27 C6,32.036 9.963,36 15,36 C20.037,36 24,32.036 24,27 Z" id="Shape" fill="#FF5722"></path>
+                                                            <path d="M9.999,30.406 C10,27 15,25.051 15,22 C15,22 19.999,25.832 19.999,30.406 C19.999,32.931 17.762,34.98 14.999,34.98 C12.236,34.98 9.998,32.932 9.999,30.406 Z" id="Shape" fill="#FFC107"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                            </ng-template>
+                        </div>
+        
+                        <div class="sidebarText">
+                            <h1 class="heading1">Line Item title</h1>
+                            <h1 class="heading2">Subheader here</h1>
+                        </div>
+        
+                        <div class="detail">
+                            <p class="detailText"> A detail</p>
+                        </div>
+                        <hr>
+        
+                        <div class="svgFire">
+                                <div *ngIf="isColor; else redfire">
+                                        <svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                                            <title>Group 2</title>
+                                            <desc>Created with Sketch.</desc>
+                                            <defs></defs>
+                                            <g id="Test-project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <g id="Green" transform="translate(-11.000000, -83.000000)">
+                                                    <g id="Group-2" transform="translate(11.000000, 83.000000)">
+                                                        <circle id="Oval-2" fill="#FFFFFF" cx="26" cy="26" r="26"></circle>
+                                                        <g id="Fire-Element" transform="translate(11.000000, 6.000000)" fill-rule="nonzero">
+                                                            <g id="Group">
+                                                                <path d="M30,23 C30,31.395 23.394,38 14.999,38 C6.604,38 0,31.395 0,23 C0,14.605 13.479,7.6 11.959,0 C15,0 30,10.841 30,23 Z" id="Shape" fill="#4CAF50"></path>
+                                                                <path d="M24,27 C24,19.401 15,12 15,12 C15,18.08 6,20.921 6,27 C6,32.036 9.963,36 15,36 C20.037,36 24,32.036 24,27 Z" id="Shape" fill="#FF5722"></path>
+                                                                <path d="M9.999,30.406 C10,27 15,25.051 15,22 C15,22 19.999,25.832 19.999,30.406 C19.999,32.931 17.762,34.98 14.999,34.98 C12.236,34.98 9.998,32.932 9.999,30.406 Z" id="Shape" fill="#FFC107"></path>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                </div>
+            
+                                <ng-template #redfire>
+                                        <svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                                            <title>Group 2</title>
+                                            <desc>Created with Sketch.</desc>
+                                            <defs></defs>
+                                            <g id="Test-project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <g id="Green" transform="translate(-11.000000, -83.000000)">
+                                                    <g id="Group-2" transform="translate(11.000000, 83.000000)">
+                                                        <circle id="Oval-2" fill="#FFFFFF" cx="26" cy="26" r="26"></circle>
+                                                        <g id="Fire-Element" transform="translate(11.000000, 6.000000)" fill-rule="nonzero">
+                                                            <g id="Group">
+                                                                <path d="M30,23 C30,31.395 23.394,38 14.999,38 C6.604,38 0,31.395 0,23 C0,14.605 13.479,7.6 11.959,0 C15,0 30,10.841 30,23 Z" id="Shape" fill="#DE2D00"></path>
+                                                                <path d="M24,27 C24,19.401 15,12 15,12 C15,18.08 6,20.921 6,27 C6,32.036 9.963,36 15,36 C20.037,36 24,32.036 24,27 Z" id="Shape" fill="#FF5722"></path>
+                                                                <path d="M9.999,30.406 C10,27 15,25.051 15,22 C15,22 19.999,25.832 19.999,30.406 C19.999,32.931 17.762,34.98 14.999,34.98 C12.236,34.98 9.998,32.932 9.999,30.406 Z" id="Shape" fill="#FFC107"></path>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                </ng-template>
+                            </div>
+            
+                            <div class="sidebarText">
+                                <h1 class="heading1">Line Item title</h1>
+                                <h1 class="heading2">Subheader here</h1>
+                            </div>
+            
+                            <div class="detail">
+                                <p class="detailText"> A detail</p>
+                            </div>
+                            <hr>
+        
+                    <div class="svgFire">
+                            <div *ngIf="isColor; else redfire">
+                                    <svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                                        <title>Group 2</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <defs></defs>
+                                        <g id="Test-project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="Green" transform="translate(-11.000000, -83.000000)">
+                                                <g id="Group-2" transform="translate(11.000000, 83.000000)">
+                                                    <circle id="Oval-2" fill="#FFFFFF" cx="26" cy="26" r="26"></circle>
+                                                    <g id="Fire-Element" transform="translate(11.000000, 6.000000)" fill-rule="nonzero">
+                                                        <g id="Group">
+                                                            <path d="M30,23 C30,31.395 23.394,38 14.999,38 C6.604,38 0,31.395 0,23 C0,14.605 13.479,7.6 11.959,0 C15,0 30,10.841 30,23 Z" id="Shape" fill="#4CAF50"></path>
+                                                            <path d="M24,27 C24,19.401 15,12 15,12 C15,18.08 6,20.921 6,27 C6,32.036 9.963,36 15,36 C20.037,36 24,32.036 24,27 Z" id="Shape" fill="#FF5722"></path>
+                                                            <path d="M9.999,30.406 C10,27 15,25.051 15,22 C15,22 19.999,25.832 19.999,30.406 C19.999,32.931 17.762,34.98 14.999,34.98 C12.236,34.98 9.998,32.932 9.999,30.406 Z" id="Shape" fill="#FFC107"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                            </div>
+        
+                            <ng-template #redfire>
+                                    <svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                                        <title>Group 2</title>
+                                        <desc>Created with Sketch.</desc>
+                                        <defs></defs>
+                                        <g id="Test-project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="Green" transform="translate(-11.000000, -83.000000)">
+                                                <g id="Group-2" transform="translate(11.000000, 83.000000)">
+                                                    <circle id="Oval-2" fill="#FFFFFF" cx="26" cy="26" r="26"></circle>
+                                                    <g id="Fire-Element" transform="translate(11.000000, 6.000000)" fill-rule="nonzero">
+                                                        <g id="Group">
+                                                            <path d="M30,23 C30,31.395 23.394,38 14.999,38 C6.604,38 0,31.395 0,23 C0,14.605 13.479,7.6 11.959,0 C15,0 30,10.841 30,23 Z" id="Shape" fill="#DE2D00"></path>
+                                                            <path d="M24,27 C24,19.401 15,12 15,12 C15,18.08 6,20.921 6,27 C6,32.036 9.963,36 15,36 C20.037,36 24,32.036 24,27 Z" id="Shape" fill="#FF5722"></path>
+                                                            <path d="M9.999,30.406 C10,27 15,25.051 15,22 C15,22 19.999,25.832 19.999,30.406 C19.999,32.931 17.762,34.98 14.999,34.98 C12.236,34.98 9.998,32.932 9.999,30.406 Z" id="Shape" fill="#FFC107"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                            </ng-template>
+                        </div>
+        
+                        <div class="sidebarText">
+                            <h1 class="heading1">Line Item title</h1>
+                            <h1 class="heading2">Subheader here</h1>
+                        </div>
+        
+                        <div class="detail">
+                            <p class="detailText"> A detail</p>
+                        </div>
+                        <hr>
+                </div>
+</body>
