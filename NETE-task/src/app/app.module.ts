@@ -13,7 +13,7 @@ import {WeatherService} from './weather.service';
 
 const appRoutes=[
   {
-    path:'', component:SearchComponent
+    path:'', component:HomeComponent
   },
   {
     path:'search', component:SearchComponent

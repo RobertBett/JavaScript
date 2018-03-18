@@ -10,16 +10,15 @@ import { Http } from '@angular/http';
 })
 export class HomeComponent implements OnInit {
   
-  current;
+
   location={
-    city:'rockville',
+    city:'r',
     code:'us'
 
   };
-  mylocation:any;
   weather:any;
   value:any;
-  local:any;
+
   tempmax:any;
   tempmax1:any;
   tempmax2:any;
@@ -48,27 +47,30 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
-      // this.current= this.http.get("http://ip-api.com/json").subscribe(
-      //   res =>{
-      //   this.mylocation=res;
-      //   this.local=JSON.parse(this.mylocation._body);
-      //   console.log(res);
-      //   console.log(this.local.city)
-      //   console.log(this.local.countryCode)
 
-      // })
+      
+
 
       this.value = localStorage.getItem('location');
+      console.log(this.value)
+      console.log('solution below')
 
-      if (this.value!=null){
+      console.log(Object.keys(this.value).length===2)
+      console.log(this._weatherService.current)
+
+
+        if(Object.keys(this.value).length===2){
+             console.log('hello')
+            this.location={
+              city: 'New york',
+              code:'us'
+            }
+        }else{
           this.location=JSON.parse(this.value);
-      }else {
-        this.location={
-          city:'rockville',
-          code:'us'
-
+          console.log('else')
         }
-      }
+
+
 
 
     this._weatherService.getweather(this.location.city, this.location.code).subscribe(
