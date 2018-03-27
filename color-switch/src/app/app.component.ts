@@ -55,6 +55,8 @@ export class AppComponent {
             var node = document.createTextNode("please hire me i beg you");
             para.appendChild(node);
             element.appendChild(para);
+            var sidebar = document.getElementById("sidebar");
+
             
             if(this.isColor==true){
               para.style.color="#4CAF50";
@@ -69,6 +71,13 @@ export class AppComponent {
             para.style.marginRight='-9px';
             para.style.display="inline-block"
             para.style.height=  this.pixels +'px';
+            if(this.pixels<1000 ){
+              sidebar.style.height= "100vh"
+            }else{
+              sidebar.style.height =  this.pixels *2 +'px';
+            }
+            
+           
             
       }
       // alert('you added '+ this.columns + 'new columns')      

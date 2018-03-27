@@ -23,6 +23,7 @@
                     <div class="inputs">
                         <label for="">Number of Columns</label>
                         <input type="text"  [(ngModel)]="columns" >
+                        <label for="">Row height</label>
                         <input type="text" placeholder="px"  [(ngModel)]="pixels"  >
                         <!-- <input type="text" [(ngModel)]="columns" id="data" (change)="onChange()"> -->
                         <button class="button change" [ngClass]="{'button': isColor, 'red2': !isColor}" (click)="onChange()">Change</button>
@@ -36,7 +37,7 @@
         
         
         
-                <div class="sidebar">
+                <div id="sidebar">
                         <div class="svgFire">
                             <div *ngIf="isColor; else redfire">
                                     <svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
