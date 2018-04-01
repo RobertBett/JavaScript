@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import Person from './Person/Person';
 
 class App extends Component {
@@ -57,11 +56,13 @@ class App extends Component {
 
   render() {
     const anything={
-      backgroundColor:'red',
+      backgroundColor:'green',
+      color:'white',
       font:'inherit',
       border:'1px solid blue',
       padding: '8px',
-      cursor:'pointer'
+      cursor:'pointer',
+
     };
 
     let persons = null;
@@ -82,12 +83,23 @@ class App extends Component {
           <Person name={this.state.persons[1].name} changed={this.nameChangeHandler}/>
           <Person name={this.state.persons[2].name} click={this.switchNameHandler.bind(this,'What')}> and i am the Prettiest</Person> */}
         </div>
-      )
+      );
+      anything.backgroundColor="red";
+    }
+
+    let classes =[];
+
+    if(this.state.persons.length <=2){
+      classes.push('red'); //classes =['red]
+    }
+    if(this.state.persons.length <=1){
+      classes.push('bold'); //classes =['red','bold']
     }
 
     return (
       <div className="App">
         <h1>This is a Heading </h1>
+        <p className={classes.join(' ')} >This is really working!</p>
         <button 
             style={anything}
             onClick={this.togglePersonsHandler}>Switch Name</button>
